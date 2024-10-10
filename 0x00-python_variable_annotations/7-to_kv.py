@@ -15,4 +15,4 @@ def to_kv(k: str, v: typing.Union[int, float]) -> typing.Tuple[str, float]:
     Returns:
         typing.Tuple[str, float]: tuple
     """
-    return (k, v)
+    return (k, v ** 2)
