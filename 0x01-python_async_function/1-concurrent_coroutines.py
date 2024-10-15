@@ -20,5 +20,11 @@ async def wait_n(n: int, max_delay: int) -> typing.List[float]:
     Returns:
         typing.List[float]: contains the float values returned by wait_random
     """
-    res = await asyncio.gather(*(wait_random(max_delay) for _ in range(n)))
-    return res
+    tasks = [wait_random(max_delay) for _ in range(n)]
+    delays = []
+
+    for task in asyncio.as_completed(tasks):
+        delay = await task
+        delays.append(delay)
+
+    return delays
