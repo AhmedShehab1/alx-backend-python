@@ -3,12 +3,12 @@
 """
 0-async_generator
 """
-from typing import Generator
+from typing import AsyncGenerator
 import random
 import asyncio
 
 
-async def async_generator() -> Generator[float, None]:
+async def async_generator() -> AsyncGenerator[float, None]:
     """
     Asynchronous Generator Function
     Yields:
